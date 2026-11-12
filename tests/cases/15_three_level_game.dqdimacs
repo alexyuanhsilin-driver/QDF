@@ -1,0 +1,14 @@
+c expect: true
+c exists a forall b exists c, all in {0,1,2}: c differs from both a and b.
+c a and b use at most two values, so c always has a third one -> true.
+p dcnf 3 6
+d 3 1 2 3 0
+e 1 0
+a 2 0
+e 3 0
+-1:0 -3:0 0
+-1:1 -3:1 0
+-1:2 -3:2 0
+-2:0 -3:0 0
+-2:1 -3:1 0
+-2:2 -3:2 0

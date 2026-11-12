@@ -1,0 +1,10 @@
+c expect: true
+c forall x in {0,1,2} exists y in {0,1,2}. y != x
+c One clause per value v: (x != v) or (y != v), written as -1:v -2:v
+p dcnf 2 3
+d 3 1 2 0
+a 1 0
+e 2 0
+-1:0 -2:0 0
+-1:1 -2:1 0
+-1:2 -2:2 0

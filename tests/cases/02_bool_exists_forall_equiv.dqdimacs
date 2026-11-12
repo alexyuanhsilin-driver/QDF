@@ -1,0 +1,7 @@
+c expect: false
+c exists y forall x. y <-> x   (the order of quantifiers matters)
+p cnf 2 2
+e 2 0
+a 1 0
+-1 2 0
+1 -2 0

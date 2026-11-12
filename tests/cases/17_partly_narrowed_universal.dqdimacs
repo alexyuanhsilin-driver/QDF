@@ -1,0 +1,17 @@
+c expect: false
+c Regression: used to stop with "no pivot found during learning".
+c exists x1  forall x3 in {0,1,2}  exists x2.
+c A learned cube makes the universal avoid 0 (x3 in {1,2}, partly narrowed).
+c Clause 1 then treats x3:0 as false, clauses 2 and 3 treat x3:1 and x3:2 as
+c open and reducible; conflict analysis merges them into x3:1,2 and the only
+c remaining resolution step would give the tautology x3:0,1,2.
+c Fix: open universal literals are only reducible on untouched variables.
+p dcnf 3 4
+d 3 3 0
+e 1 0
+a 3 0
+e 2 0
+3:0 2:1 0
+2:0 3:1 1:1 0
+2:0 1:0 3:2 0
+3:2 2:0 0

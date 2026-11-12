@@ -1,0 +1,4 @@
+discqbf
+discqbf-debug
+tests/failures*/
+__pycache__/

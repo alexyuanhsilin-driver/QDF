@@ -1,0 +1,5 @@
+c expect: true
+p dcnf 2 0
+d 5 1 2 0
+a 1 0
+e 2 0

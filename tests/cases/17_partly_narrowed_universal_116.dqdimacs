@@ -1,0 +1,13 @@
+c expect: false
+c Regression: same "no pivot found" failure as 17_partly_narrowed_universal.
+p dcnf 4 5
+d 3 1 0
+d 3 4 0
+e 4 2 0
+a 1 0
+e 3 0
+1:0 3:0 0
+2:1 0
+2:0,1 0
+3:1 4:2 1:2 0
+1:1 2:0 3:1 4:1 0

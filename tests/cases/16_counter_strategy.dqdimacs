@@ -1,0 +1,11 @@
+c expect: false
+c forall b in {0..3} exists c in {0,1}: c = (b is even) and c = (b < 2)
+c b = 1 gives c = 0 and c = 1 -> false.
+p dcnf 2 4
+d 4 1 0
+a 1 0
+e 2 0
+-1:0,2 2:1 0
+-1:1,3 2:0 0
+-1:0,1 2:1 0
+-1:2,3 2:0 0

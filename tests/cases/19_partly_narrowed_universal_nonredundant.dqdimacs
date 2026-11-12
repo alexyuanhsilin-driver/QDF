@@ -1,0 +1,20 @@
+c expect: false
+c Regression for rule 1 without redundant clauses (no clause subsumes another);
+c 17_* rely on a subsumed clause. Found by random search: 1 in ~4.7 million
+c non-redundant formulas made the old solver stop with "no pivot found".
+c exists x1,x2  forall x3 in {0..3}  exists x4.  A cube narrows x3 to {2,3};
+c C4 reduces x3:3 (assumes x3 = 2), C1 reduces x3:2 (assumes x3 = 3), C3 uses
+c x3:0,1 as false; learning merges x3:2,3 and resolving with C3 is a tautology.
+p dcnf 4 5
+d 3 1 0
+d 3 2 0
+d 4 3 0
+d 3 4 0
+e 1 2 0
+a 3 0
+e 4 0
+2:1 3:2 4:2 0
+1:0 3:0 4:0,2 0
+3:0,1 4:0,1 0
+2:0,2 3:3 4:2 0
+1:1 3:0 0

@@ -1,0 +1,7 @@
+c expect: false
+c A clause with only universal literals reduces to the empty clause.
+p dcnf 2 1
+d 3 1 0
+a 1 0
+e 2 0
+1:0,1 0

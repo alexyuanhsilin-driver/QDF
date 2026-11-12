@@ -1,0 +1,8 @@
+c expect: false
+c Same as 10_big_domain plus a clause excluding the last value.
+p dcnf 1 4
+d 200 1 0
+-1:0-63 0
+-1:64-127 0
+-1:128-198 0
+-1:199 0

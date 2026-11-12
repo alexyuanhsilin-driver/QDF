@@ -1,0 +1,8 @@
+c expect: false
+c exists x forall u (Boolean): (x or u) and (not x or not u)
+c Universal reduction removes u from both clauses -> (x) and (not x).
+p cnf 2 2
+e 1 0
+a 2 0
+1 2 0
+-1 -2 0

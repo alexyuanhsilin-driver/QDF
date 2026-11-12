@@ -1,0 +1,7 @@
+c expect: true
+c Plain QDIMACS (all domains 2): forall x exists y. y <-> x
+p cnf 2 2
+a 1 0
+e 2 0
+-1 2 0
+1 -2 0

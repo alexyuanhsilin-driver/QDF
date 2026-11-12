@@ -1,0 +1,17 @@
+c expect: true
+c The stop criterion's extra check fires here (walkthrough example).
+c exists x1  forall x2 in {0,1,2}  exists x3 in {0,1,2}.
+c   C1: x2:0 | x3:1
+c   C2: x1:1 | x2:0,2 | x3:0,2
+c A cube narrows x2 to {1,2} at level 0. In the later conflict on C2, DepQBF's
+c three conditions hold with A = x1 and backjump level 0, but x2:0,2 is
+c touched and not false at level 0, so the clause would not be unit there.
+c Resolving once more on x3 (with C1) and reducing x2 gives the unit (x1:1).
+p dcnf 3 2
+d 3 2 0
+d 3 3 0
+e 1 0
+a 2 0
+e 3 0
+3:1 2:0 0
+1:1 3:0,2 3:2 2:0,2 0
